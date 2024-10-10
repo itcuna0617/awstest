@@ -1,0 +1,20 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.TestEntity;
+import com.example.demo.repository.TestRepository;
+
+@Service
+public class TestService {
+	@Autowired
+	private TestRepository testRepository;
+
+	public void create(String name, int age) {
+		TestEntity testEntity = new TestEntity(name, age);
+		testRepository.save(testEntity);
+	}
+	
+	
+}
